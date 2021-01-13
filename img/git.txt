@@ -1,0 +1,36 @@
+lần dầu tiên dùng git: 
+	git config --global user.name "your username"
+
+	git config --global user.email "your email"
+lần 1: 
+- git init: tạo liên kết dự án của mình với git
+- git add . hoặc git add "tên file": thông báo cho git những mình đã làm việc: thêm, sửa, xóa 1 file hoặc 1 thư mục
+- git commit -m "tên commit" : lưu trữ những file đã thay đổi vào kho chứa ở dưới máy.
+- git remote add origin https://github.com/tuananhpta19/nodemy-git-repeat.git: đường dẫn đến kho chứa online
+- git push -u origin "tên nhánh": đẩy code từ kho chứa ở máy đến kho chứa online
+
+lần 2: 
+- git add . hoặc git add "tên file": thông báo cho git những mình đã làm việc: thêm, sửa, xóa 1 file hoặc 1 thư mục
+- git commit -m "tên commit" : lưu trữ những file đã thay đổi vào kho chứa ở dưới máy.
+- git push -u origin "tên nhánh" hoặc git push: đẩy code từ kho chứa ở máy đến kho chứa online
+
+lấy code từ 1 link git cho trước: 
+- download thư mục chứa dự án: không có liên kết với kho chứa online, không được đẩy được code mới lên
+- git clone https://github.com/tuananhpta19/nodemy-git-repeat.git: có liên kết với kho chứa online, có đẩy được code mới lên khi
+tài khoản của mình được chủ link git cấp quyền đẩy lên.
+
+khi 1 người khác đẩy code mới lên 
+ git pull origin "tên nhánh"
+
+cập nhật những trạng thái đã thay đổi trên kho chứa online: cập nhật nhánh, code của nhánh	
+	git fetch
+
+tạo nhánh: KHÔNG BAO GIỜ ĐƯỢC LÀM VIỆC TRÊN NHÁNH CỦA NGƯỜI KHÁC
+   git checkout -b "tên nhánh": copy toàn bộ của nhánh hiện tại sang một nhánh mới
+   git checkout "tên nhánh": quay lại nhánh mong muốn
+   
+ghép code từ nhánh khác gọi là nhánh A => nhánh hiện tại của mình gọi là nhánh B
+  git checkout B
+  git pull origin A
+=> sẽ dẫn đến bị conflic (về xem video)
+-> tự động ghép code
