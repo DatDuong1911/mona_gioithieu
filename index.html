@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/index.css">
+
 </head>
 
 <body>
@@ -67,13 +68,36 @@
             </div>
         </div>
         <div class="send">
-            <p><input type="text" placeholder="Họ và Tên"> <input type="text" placeholder="Email"></p>
-            <p><input type="text" placeholder="Địa chỉ"> <input type="text" placeholder="Số điện thoại"></p>
+            <p><input type="text" id="name" placeholder="Họ và Tên(*)"> <input id="mail" type="text" placeholder="Email(*)(**)"></p>
+            <p class="text-name"></p>
+            <p><input type="text" id="address" placeholder="Địa chỉ(*)"> <input id="phone" type="text" placeholder="Số điện thoại(*)"></p>
             <p>
-                <textarea name="" id="" cols="70" rows="5" placeholder="Lời nhắn" "></textarea></p>
-            <button class="button ">Gửi</button>
+                <textarea name="" id="message" cols="70" rows="5" placeholder="Lời nhắn(*)" "></textarea></p>
+                <P><b>(*) Điền đầy đủ thông tin tại đây.</b></P>
+                <P><b>(*) Điền đầy đủ thông tin tại đây.</b></P>
+            <button class="button " onclick="button() ">Gửi</button>
         </div>
     </div>
 </body>
+<script>
+    var checkname = document.getElementById('name')
+    var checkmail = document.getElementById('mail')
+    var checkaddress = document.getElementById('address')
+    var checkphone = document.getElementById('phone')
+    var checkmessage = document.getElementById('message')
 
+var checkphonetype = isNaN(checkphone)
+if (checkphonetype == true) {
+    alert('Điện thoại phải để ở định dạng số');
+}
+
+function button() {
+    if (checkname.value && checkmail.value && checkaddress.value && checkmessage.value && checkphone.value) {
+        alert('Đã gửi tin nhắn')
+    } else {
+        alert("Xin điền đầy đủ thông tin theo yêu cầu. ")
+    }
+
+}
+</script>
 </html>
